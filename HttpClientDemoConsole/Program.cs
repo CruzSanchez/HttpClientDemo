@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 
 namespace HttpClientDemoConsole
@@ -10,12 +11,11 @@ namespace HttpClientDemoConsole
     {
         static void Main(string[] args)
         {
-            var users = GetJsonData();
-
-            foreach (var user in users)
+            foreach (var item in GetJsonData())
             {
-                Console.WriteLine($"{user.id} : {user.title}");
+                Console.WriteLine($"{item.Id} : {item.Title}");
             }
+           
         }
 
         public static IEnumerable<User> GetJsonData()
